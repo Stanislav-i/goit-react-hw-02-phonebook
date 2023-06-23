@@ -25,7 +25,6 @@ export class App extends Component {
     const name = form.elements.name.value;
     const number = form.elements.number.value;
     const contactId = nanoid();
-    console.log(contactId, name, number);
     if (
       this.state.contacts.some(
         contact => contact.name.toLocaleLowerCase() === name.toLocaleLowerCase()
@@ -60,9 +59,7 @@ export class App extends Component {
 
   deleteContact = contactId => {
     this.setState(prevState => ({
-      contacts: prevState.contacts.filter(
-        contact => contact.id !== contactId
-      ),
+      contacts: prevState.contacts.filter(contact => contact.id !== contactId),
     }));
   };
 
@@ -78,7 +75,6 @@ export class App extends Component {
           justifyContent: 'center',
           alignItems: 'center',
           paddingTop: '50px',
-          // fontSize: 40,
           color: 'biege',
         }}
       >
@@ -97,7 +93,10 @@ export class App extends Component {
           onChange={this.handleFilterChange}
         />
 
-        <ContactList contactList={filteredContacts} onDeleteContact={ this.deleteContact} />
+        <ContactList
+          contactList={filteredContacts}
+          onDeleteContact={this.deleteContact}
+        />
       </div>
     );
   }
