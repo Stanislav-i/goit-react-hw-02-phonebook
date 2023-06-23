@@ -79,7 +79,7 @@ export class App extends Component {
           alignItems: 'center',
           paddingTop: '50px',
           // fontSize: 40,
-          color: '#010101',
+          color: 'biege',
         }}
       >
         <h1>Phonebook</h1>

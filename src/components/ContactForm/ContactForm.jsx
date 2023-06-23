@@ -1,9 +1,12 @@
-import css from './ContactForm.module.css'
+import PropTypes from 'prop-types';
+import css from './ContactForm.module.css';
 
 export const ContactForm = ({ onSubmit, nameInputId, numberInputId }) => {
   return (
     <form onSubmit={onSubmit} className={css.formstyle}>
-          <label htmlFor={nameInputId} className={ css.inputname}>Name</label>
+      <label htmlFor={nameInputId} className={css.inputname}>
+        Name
+      </label>
       <input
         type="text"
         name="name"
@@ -14,7 +17,9 @@ export const ContactForm = ({ onSubmit, nameInputId, numberInputId }) => {
         required
       />
 
-          <label htmlFor={numberInputId} className={css.inputname}>Number</label>
+      <label htmlFor={numberInputId} className={css.inputname}>
+        Number
+      </label>
       <input
         type="tel"
         name="number"
@@ -25,7 +30,15 @@ export const ContactForm = ({ onSubmit, nameInputId, numberInputId }) => {
         required
       />
 
-          <button type="submit" className={ css.button}>Add contact</button>
+      <button type="submit" className={css.button}>
+        Add contact
+      </button>
     </form>
   );
+};
+
+ContactForm.propTypes = {
+  onSubmit: PropTypes.func,
+  nameInputId: PropTypes.string,
+  numberInputId: PropTypes.string,
 };
